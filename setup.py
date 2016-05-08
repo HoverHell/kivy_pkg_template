@@ -20,7 +20,8 @@ setup_kwargs = dict(
         # 'https://github.com/sashka/atomicfile/tarball/master#egg=atomicfile',
     ],
     ext_modules=cythonize([
-        "kivypkgtplapp/hello_cython.pyx",
+        # "kivypkgtplapp/hello_cython.pyx",
+        "kivypkgtplapp/*.pyx",
     ]),
 )
 
