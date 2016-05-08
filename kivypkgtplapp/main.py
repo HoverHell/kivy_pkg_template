@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 # coding: utf8
 
+from kivypkgtplapp import hello_cython
+from kivypkgtplapp import sampleapp
+
 
 def main():
     print("Main!")
-    from kivypkgtplapp import hello_cython
     hello_cython.hello()
-    from kivypkgtplapp import sampleapp
     app = sampleapp.SampleApp()
     app.run()
 
