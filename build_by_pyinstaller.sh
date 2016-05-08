@@ -6,7 +6,7 @@
 #    * i.e. need a sort-of buildfarm to build for multiple target platforms.
 #    * Packs the current system's libraries.
 #  * Relies on automatic dependencies detection.
-#    * Can pack too much. Maybe needs tweaking.
+#    * Can pack too much (e.g. all the system's icons). Maybe needs tweaking.
 # ###
 
 set -e
