@@ -2,6 +2,13 @@
 # coding: utf8
 """
 cx_Freeze-based packaging: setup file.
+
+Currently, cx_Freeze does not go well with kivy. Apparently, some
+Cython's hacks for circular imports (through pxd) didn't go well with
+some cx_Freeze's hacks for importing. In kivy in particular,
+kivy.properties (pxd) imports kivy._event for method signatures, and
+kivy._event (pyx) import kivy.properties to use them all over the
+place.
 """
 
 import sys
@@ -13,10 +20,16 @@ from cx_Freeze import Executable
 # Dependencies are automatically detected, but it might need
 # fine tuning.
 cx_build_options = dict(
-    packages=["kivy"],
+    packages=[
+        "kivy",
+        "kivypkgtplapp",
+    ],
     excludes=[],
-    includes=["kivypkgtplapp"],
-    include_files=[],
+    includes=[
+    ],
+    include_files=[
+        "kivypkgtplapp/sampleapp.kv",
+    ],
 )
 
 # base = 'Console'

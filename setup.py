@@ -8,6 +8,7 @@ from Cython.Build import cythonize
 
 setup_kwargs = dict(
     name="template_kivy_packaging",
+    version="1.0",
     packages=find_packages(),
     entry_points={
         'console_scripts': [
